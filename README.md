@@ -11,3 +11,6 @@ Task Perform in the project are:
 7.  Logout.
 (You can treat all the users as admin)
 
+Python and Django Versions: 
+Python Version 3.7.9
+Django Version 3.0.5
