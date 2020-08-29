@@ -1,0 +1,23 @@
+{% extends "account/base.html" %}
+
+{% block body_block %}
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Welcome to AgloScale Mini Task !</h1>
+    {% if user.is_authenticated %}
+        <h2>Hello {{ user.username }}</h2>
+        <form method="POST" action="delete_user">
+            {% csrf_token %}
+            <label>List of Users : <label>
+            <select name="drop" style="width: 150px; height:28px;">
+                {% for i in users %}
+                <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+        </form>
+        <input type="submit" name="" value="Delete User">
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

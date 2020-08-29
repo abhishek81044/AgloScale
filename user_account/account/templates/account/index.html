@@ -1,0 +1,24 @@
+{% extends "account/base.html" %}
+
+{% block body_block %}
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Welcome to AgloScale Mini Task !</h1>
+    {% if user.is_authenticated %}
+        <h2>Hello {{ user.username }}</h2>
+    {% else %}
+        <ul>
+          <li>An Admin Login Page.</li>
+          <li>Validate ID and Password.</li>
+          <li>If Valid, redirect to the profile page.</li>
+          <li>If Invallid, redirect to a Signup page.</li>
+          <li>Post Login/Signup, dispaly all existing User ID on profile page using a dropdown list.</li>
+          <li>Delete button to delete the selected User ID from the database.</li>
+          <li>Logout</li>
+          <h2>(You can treat all the users as admin)</h2>
+        </ul>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
